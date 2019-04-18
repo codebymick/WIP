@@ -87,7 +87,7 @@ export default {
     list-style: none;
     padding: 0;
     margin: 0;
-    background-color: white;
+    background-color: rgba(255,255,255,.8);
     z-index:999;
     }
 
@@ -107,11 +107,16 @@ export default {
     white-space: nowrap;
     border:2px solid transparent;
     border-radius:15px;
+
+    border-radius: 15px;
+    border:2px solid #2c3e50;
+    margin-right: 2px;
     }
 
   ul li a:hover {
     background: #2c3e50;
-    color:whitesmoke}
+    color:rgba(255,255,255,.8)
+  }
 
   li:hover > ul {
     display: block;
