@@ -1,13 +1,18 @@
 import Vue from 'vue'
+import BootstrapVue from 'bootstrap-vue'
 import Router from 'vue-router'
 import home from '@/components/home'
 import skills from '@/components/skills'
 import contact from '@/components/contact'
 import about from '@/components/about'
 import projects from '@/components/projects'
+import mikipedia from '@/components/themes/mikipedia'
 import projectsChild from '@/components/projectsChild'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(Router)
+Vue.use(BootstrapVue)
 
 export default new Router({
   mode: 'history',
@@ -31,6 +36,16 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: about
+    },
+    {
+      path: '/projects',
+      name: 'Projects',
+      component: projects
+    },
+    {
+      path: '/mikipedia',
+      name: 'Mikipedia',
+      component: mikipedia
     },
     {
       path: '/projects/:name',

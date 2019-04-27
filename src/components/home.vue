@@ -1,7 +1,7 @@
 <template>
   <div class='hello'>
-    <h1>{{ title }}</h1>
-    <h3>{{ subline }}</h3>
+    <div class="title bigger">{{ title }}</div>
+    <div class="title">{{ subline }}</div>
   </div>
 </template>
 
@@ -16,21 +16,12 @@ export default {
   }
 }
 </script>
-
-<!-- Add 'scoped' attribute to limit CSS to this component only -->
-<style>
+<style lang="scss">
   body{
     margin: 0;
     overflow: hidden;
-    }
-  h1, h3 {
-    font-weight: normal;
-    margin: 0 auto;
-    }
-  h3{
-    margin-top: 25px;
-    font-size: 1.35em;
-    }
+  }
+
   .hello{
     display: flex;
     pointer-events: none;
@@ -44,6 +35,12 @@ export default {
     top: 0;
     left: 0;
     flex-direction: column;
-    }
-
+    .title{
+      font-weight: normal;
+      &.bigger{
+        margin-bottom: 25px;
+        font-size: 1.5em;
+         }
+      }
+  }
 </style>
