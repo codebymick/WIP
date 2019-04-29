@@ -13,11 +13,11 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
- *.ico
 
 **/CBMdownloads/
 
 .babrc
+.babelrc
 .editorconfig
 .eslintignore
 .eslintrc.js
@@ -25,6 +25,9 @@ yarn-error.log*
 config/
 package-lock.json
 package.json
-
+static/
 *.png
 *.jpg
+*.ico
+*.mov
+*.mp4
