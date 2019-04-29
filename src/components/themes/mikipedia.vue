@@ -78,46 +78,40 @@
         </div>
       </div>
       <div id="main-content" class="col-md-10">
-        <div class="tab-row">
+        <div id="tab-row">
           <ul class="left-tabs">
-            <li><a href="">article</a></li>
-            <li><a href="">talk</a></li>
-            <li><a href="">read</a></li>
+            <li @click="active = 'article'" class="file-tab" :class="{active:active === 'article'}">article</li>
+            <li @click="active = 'talk'" class="file-tab" :class="{active:active === 'talk'}">talk</li>
           </ul>
           <ul class="right-tabs">
-            <li><a href="">view source</a></li>
-            <li><a href="">view history</a></li>
+            <li @click="active = 'read'" class="file-tab" :class="{active:active === 'read' || active === 'article'}">read</li>
+            <li @click="active = 'view-source'" class="file-tab" :class="{active:active === 'view-source'}">view-source</li>
+            <li @click="active = 'view-history'" class="file-tab" :class="{active:active === 'view-history'}">view-history</li>
             <li><a href="">search Mikipedia</a></li>
           </ul>
         </div>
         <div class="row content-body">
           <div class="col-md-9">
-            Trump was born and raised in the New York City borough of Queens and received an economics degree from the
-            Wharton School. He was appointed president of his family's real estate business in 1971, renamed it The
-            Trump
-            Organization, and expanded it from Queens and Brooklyn into Manhattan. The company built or renovated
-            skyscrapers, hotels, casinos, and golf courses. Trump later started various side ventures, including
-            licensing
-            his name for real estate and consumer products. He managed the company until his 2017 inauguration. He
-            co-authored several books, including The Art of the Deal. He owned the Miss Universe and Miss USA beauty
-            pageants from 1996 to 2015, and he produced and hosted The Apprentice, a reality television show, from 2003
-            to
-            2015. Forbes estimates his net worth to be $3.1 billio
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </div>
           <div class="col-md-3">
-            <img src="../../assets/miki/test.jpg" alt="">
+            <img class="auto-size" src="https://via.placeholder.com/150x350" alt="">
           </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
 </template>
 
 <script>
-  export default {
-    name: 'mikipedia'
+export default {
+  name: 'mikipedia',
+  data () {
+    return { active: 'article' }
   }
+}
 </script>
 
 <style scoped lang="scss">
@@ -135,7 +129,7 @@
     background-color: white;
     padding-left: 0;
 
-    .tab-row {
+    #tab-row {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -144,7 +138,12 @@
         display: flex;
         flex-direction: row;
       }
-
+      .left-tabs{
+        li{
+          &:first-of-type{
+            border-left: 1px solid transparent;}
+        }
+      }
       ul {
         list-style: none;
         padding: 0;
@@ -152,13 +151,13 @@
 
       li {
         border: 1px solid #a7d7f9;
-
-        a {
-          padding-left: 0.615em;
-          padding-right: 0.615em;
-          color: #0645ad;
-          cursor: pointer;
-          font-size: 0.8125em;
+        padding-left: 0.615em;
+        padding-right: 0.615em;
+        color: #0645ad;
+        cursor: pointer;
+        font-size: 0.8125em;
+        &.active{
+          border-bottom: none;
         }
       }
     }

@@ -7,7 +7,6 @@ import contact from '@/components/contact'
 import about from '@/components/about'
 import projects from '@/components/projects'
 import mikipedia from '@/components/themes/mikipedia'
-import projectsChild from '@/components/projectsChild'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -16,6 +15,7 @@ Vue.use(BootstrapVue)
 
 export default new Router({
   mode: 'history',
+  linkActiveClass: 'active',
   routes: [
     {
       path: '/',
@@ -46,17 +46,6 @@ export default new Router({
       path: '/mikipedia',
       name: 'Mikipedia',
       component: mikipedia
-    },
-    {
-      path: '/projects/:name',
-      name: 'Projects',
-      component: projects,
-      children: [
-        {
-          path: 'child',
-          component: projectsChild
-        }
-      ]
     }
   ]
 })

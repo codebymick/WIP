@@ -64,9 +64,12 @@ export default {
   .border-red {
     border: 1px solid red;
   }
-
   .border-black {
     border: 1px solid black;
+  }
+  .auto-size{
+    width: 100%;
+    height: auto;
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
